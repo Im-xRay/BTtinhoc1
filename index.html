@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IELTS Vocabulary Hub - Học và luyện tập từ vựng IELTS">
+    <title>IELTS nè má</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 IELTS nè má</h1>
+            <nav class="tabs" role="tablist">
+                <button id="tab-learn" class="tab-btn active" role="tab" aria-selected="true">Học Từ Vựng</button>
+                <button id="tab-quiz" class="tab-btn" role="tab" aria-selected="false">Luyện Tập (Quiz)</button>
+            </nav>
+        </header>
+
+        <main>
+            <section id="section-learn" class="section active" role="tabpanel">
+                <p class="instruction">Click vào thẻ để xem nghĩa và ví dụ chi tiết.</p>
+                <div id="flashcard-container" class="grid-layout"></div>
+            </section>
+
+            <section id="section-quiz" class="section hidden" role="tabpanel">
+                <div class="quiz-box">
+                    <header class="quiz-header">
+                        <h2>Chọn nghĩa đúng của từ sau:</h2>
+                        <span id="score-display">Điểm: 0</span>
+                    </header>
+                    <div class="question-container">
+                        <h3 id="question-word">Loading...</h3>
+                    </div>
+                    <div id="options-container" class="options-grid"></div>
+                    <footer class="quiz-footer">
+                        <button id="next-question-btn" class="primary-btn hidden">Câu tiếp theo ➔</button>
+                    </footer>
+                </div>
+            </section>
+        </main>
+
+        <footer class="author-signature">
+            <p>Coded with 💻 & ☕ by <strong>Tphuc</strong></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

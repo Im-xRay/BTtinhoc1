@@ -1,0 +1,422 @@
+[
+    {
+        "word": "Ubiquitous",
+        "type": "adj",
+        "pronunciation": "/juːˈbɪk.wɪ.təs/",
+        "meaning": "Có mặt ở khắp mọi nơi",
+        "example": "Mobile phones have become ubiquitous in modern society."
+    },
+    {
+        "word": "Meticulous",
+        "type": "adj",
+        "pronunciation": "/məˈtɪk.jə.ləs/",
+        "meaning": "Tỉ mỉ, quá kỹ càng",
+        "example": "Many hours of meticulous preparation have gone into writing the book."
+    },
+    {
+        "word": "Mitigate",
+        "type": "verb",
+        "pronunciation": "/ˈmɪt.ɪ.ɡeɪt/",
+        "meaning": "Làm giảm nhẹ, làm dịu",
+        "example": "It is unclear how to mitigate the effects of tourism on the island."
+    },
+    {
+        "word": "Detrimental",
+        "type": "adj",
+        "pronunciation": "/ˌdet.rɪˈmen.təl/",
+        "meaning": "Có hại, bất lợi",
+        "example": "These chemicals have a detrimental effect on the environment."
+    },
+    {
+        "word": "Lucrative",
+        "type": "adj",
+        "pronunciation": "/ˈluː.krə.tɪv/",
+        "meaning": "Sinh lời, kiếm được nhiều tiền",
+        "example": "He gave up a lucrative career as a lawyer to look after his kids."
+    },
+    {
+        "word": "Unprecedented",
+        "type": "adj",
+        "pronunciation": "/ʌnˈpres.ɪ.den.tɪd/",
+        "meaning": "Chưa từng có tiền lệ",
+        "example": "This century has witnessed environmental destruction on an unprecedented scale."
+    },
+    {
+        "word": "Catalyst",
+        "type": "noun",
+        "pronunciation": "/ˈkæt.əl.ɪst/",
+        "meaning": "Chất xúc tác, tác nhân thúc đẩy",
+        "example": "The government's new policy acted as a catalyst for economic growth."
+    },
+    {
+        "word": "Obsolete",
+        "type": "adj",
+        "pronunciation": "/ˌɒb.səlˈiːt/",
+        "meaning": "Lỗi thời, không còn được sử dụng",
+        "example": "Gas lamps became obsolete when electric lighting was invented."
+    },
+    {
+        "word": "Resilient",
+        "type": "adj",
+        "pronunciation": "/rɪˈzɪl.jənt/",
+        "meaning": "Kiên cường, mau phục hồi",
+        "example": "She's a resilient girl - she won't let this failure get her down."
+    },
+    {
+        "word": "Deteriorate",
+        "type": "verb",
+        "pronunciation": "/dɪˈtɪə.ri.ə.reɪt/",
+        "meaning": "Xấu đi, tồi tệ hơn",
+        "example": "The political situation in the region has deteriorated rapidly."
+    },
+    {
+        "word": "Conducive",
+        "type": "adj",
+        "pronunciation": "/kənˈdʒuː.sɪv/",
+        "meaning": "Có ích, tạo điều kiện thuận lợi",
+        "example": "Such a noisy environment was not conducive to a good night's sleep."
+    },
+    {
+        "word": "Profound",
+        "type": "adj",
+        "pronunciation": "/prəˈfaʊnd/",
+        "meaning": "Sâu sắc, to lớn",
+        "example": "The invention of the internet has had a profound impact on how we communicate."
+    },
+    {
+        "word": "Alleviate",
+        "type": "verb",
+        "pronunciation": "/əˈliː.vi.eɪt/",
+        "meaning": "Làm nhẹ bớt, giảm bớt",
+        "example": "The drugs did nothing to alleviate her pain."
+    },
+    {
+        "word": "Pragmatic",
+        "type": "adj",
+        "pronunciation": "/præɡˈmæt.ɪk/",
+        "meaning": "Thực dụng, thực tế",
+        "example": "In business, the pragmatic approach to problems is often more successful than an idealistic one."
+    },
+    {
+        "word": "Inevitable",
+        "type": "adj",
+        "pronunciation": "/ɪˈnev.ɪ.tə.bəl/",
+        "meaning": "Không thể tránh khỏi",
+        "example": "The accident was the inevitable consequence of carelessness."
+    },
+    {
+        "word": "Empirical",
+        "type": "adj",
+        "pronunciation": "/ɪmˈpɪr.ɪ.kəl/",
+        "meaning": "Dựa trên kinh nghiệm, thực nghiệm",
+        "example": "This theory needs to be backed up with solid empirical evidence."
+    },
+    {
+        "word": "Fluctuate",
+        "type": "verb",
+        "pronunciation": "/ˈflʌk.tʃu.eɪt/",
+        "meaning": "Dao động, lên xuống thất thường",
+        "example": "Vegetable prices fluctuate according to the season."
+    },
+    {
+        "word": "Tangible",
+        "type": "adj",
+        "pronunciation": "/ˈtæn.dʒə.bəl/",
+        "meaning": "Hữu hình, có thể sờ mó hoặc thấy rõ",
+        "example": "We need tangible evidence if we're going to take legal action."
+    },
+    {
+        "word": "Scrutinize",
+        "type": "verb",
+        "pronunciation": "/ˈskruː.tɪ.naɪz/",
+        "meaning": "Xem xét kỹ lưỡng",
+        "example": "He scrutinized the men's faces carefully, trying to work out who was lying."
+    },
+    {
+        "word": "Paradigm",
+        "type": "noun",
+        "pronunciation": "/ˈpær.ə.daɪm/",
+        "meaning": "Mô hình, hệ nhận thức",
+        "example": "The widespread use of social media represents a new paradigm in human interaction."
+    },
+    {
+        "word": "Enigma",
+        "type": "noun",
+        "pronunciation": "/ɪˈnɪɡ.mə/",
+        "meaning": "Điều bí ẩn, người khó hiểu",
+        "example": "The disappearance of the flight remains a complete enigma to investigators."
+    },
+    {
+        "word": "Ambiguous",
+        "type": "adj",
+        "pronunciation": "/æmˈbɪɡ.ju.əs/",
+        "meaning": "Mơ hồ, có nhiều hơn một nghĩa",
+        "example": "The government's stance on the issue is largely ambiguous."
+    },
+    {
+        "word": "Eradicate",
+        "type": "verb",
+        "pronunciation": "/ɪˈræd.ɪ.keɪt/",
+        "meaning": "Tiêu diệt, xóa bỏ hoàn toàn",
+        "example": "The disease that once claimed millions of lives has now been eradicated."
+    },
+    {
+        "word": "Feasible",
+        "type": "adj",
+        "pronunciation": "/ˈfiː.zə.bəl/",
+        "meaning": "Khả thi, có thể thực hiện được",
+        "example": "It's simply not feasible to build a new bridge with the current budget."
+    },
+    {
+        "word": "Gregarious",
+        "type": "adj",
+        "pronunciation": "/ɡrɪˈɡeə.ri.əs/",
+        "meaning": "Hòa đồng, thích giao du",
+        "example": "Emma's a gregarious, outgoing person who loves hosting parties."
+    },
+    {
+        "word": "Implement",
+        "type": "verb",
+        "pronunciation": "/ˈɪm.plɪ.ment/",
+        "meaning": "Thực hiện, thi hành (kế hoạch, chính sách)",
+        "example": "The changes to the national health system will be implemented next year."
+    },
+    {
+        "word": "Incentive",
+        "type": "noun",
+        "pronunciation": "/ɪnˈsen.tɪv/",
+        "meaning": "Động lực, sự khích lệ",
+        "example": "Tax incentives have been very effective in encouraging people to save."
+    },
+    {
+        "word": "Juxtapose",
+        "type": "verb",
+        "pronunciation": "/ˌdʒʌk.stəˈpəʊz/",
+        "meaning": "Đặt cạnh nhau (thường để so sánh)",
+        "example": "The exhibition juxtaposes Picasso's early drawings with his later works."
+    },
+    {
+        "word": "Lethargic",
+        "type": "adj",
+        "pronunciation": "/ləˈθɑː.dʒɪk/",
+        "meaning": "Uể oải, lờ đờ, thiếu năng lượng",
+        "example": "I was feeling tired and lethargic after eating a massive meal."
+    },
+    {
+        "word": "Notorious",
+        "type": "adj",
+        "pronunciation": "/nəʊˈtɔː.ri.əs/",
+        "meaning": "Khét tiếng, có tiếng xấu",
+        "example": "The company is notorious for paying its bills late."
+    },
+    {
+        "word": "Pervasive",
+        "type": "adj",
+        "pronunciation": "/pəˈveɪ.sɪv/",
+        "meaning": "Tỏa khắp, lan tràn khắp nơi",
+        "example": "The influence of Freud is pervasive in her books."
+    },
+    {
+        "word": "Plausible",
+        "type": "adj",
+        "pronunciation": "/ˈplɔː.zə.bəl/",
+        "meaning": "Hợp lý, có vẻ đúng",
+        "example": "A bomb was the only plausible explanation for the crash."
+    },
+    {
+        "word": "Repercussion",
+        "type": "noun",
+        "pronunciation": "/ˌriː.pəˈkʌʃ.ən/",
+        "meaning": "Hậu quả (thường là xấu và kéo dài)",
+        "example": "Any decrease in tourism could have serious repercussions for the local economy."
+    },
+    {
+        "word": "Sporadic",
+        "type": "adj",
+        "pronunciation": "/spəˈræd.ɪk/",
+        "meaning": "Rải rác, thỉnh thoảng, không thường xuyên",
+        "example": "There has been sporadic violence in the downtown area."
+    },
+    {
+        "word": "Trivial",
+        "type": "adj",
+        "pronunciation": "/ˈtrɪv.i.əl/",
+        "meaning": "Tầm thường, không quan trọng",
+        "example": "I don't know why he gets so upset about something so trivial."
+    },
+    {
+        "word": "Vital",
+        "type": "adj",
+        "pronunciation": "/ˈvaɪ.təl/",
+        "meaning": "Thiết yếu, mang tính sống còn",
+        "example": "A strong opposition is vital to a healthy democracy."
+    },
+    {
+        "word": "Ascertain",
+        "type": "verb",
+        "pronunciation": "/ˌæs.əˈteɪn/",
+        "meaning": "Xác minh, làm rõ",
+        "example": "The police have so far been unable to ascertain the cause of the explosion."
+    },
+    {
+        "word": "Belligerent",
+        "type": "adj",
+        "pronunciation": "/bəˈlɪdʒ.ər.ənt/",
+        "meaning": "Hiếu chiến, thích gây gổ",
+        "example": "He's always very belligerent when he's had too much to drink."
+    },
+    {
+        "word": "Corroborate",
+        "type": "verb",
+        "pronunciation": "/kəˈrɒb.ə.reɪt/",
+        "meaning": "Chứng thực, củng cố (bằng chứng, ý kiến)",
+        "example": "Recent research seems to corroborate his theory."
+    },
+    {
+        "word": "Discrepancy",
+        "type": "noun",
+        "pronunciation": "/dɪˈskrep.ən.si/",
+        "meaning": "Sự khác biệt, sự không nhất quán",
+        "example": "There is a discrepancy between the two reports."
+    },
+    {
+        "word": "Exacerbate",
+        "type": "verb",
+        "pronunciation": "/ɪɡˈzæs.ə.beɪt/",
+        "meaning": "Làm trầm trọng thêm (một vấn đề, dịch bệnh)",
+        "example": "This attack will exacerbate the already tense relations between the two communities."
+    },
+    {
+        "word": "Impeccable",
+        "type": "adj",
+        "pronunciation": "/ɪmˈpek.ə.bəl/",
+        "meaning": "Hoàn hảo, không tì vết",
+        "example": "His English is impeccable, you would think he is a native speaker."
+    },
+    {
+        "word": "Vulnerable",
+        "type": "adj",
+        "pronunciation": "/ˈvʌl.nər.ə.bəl/",
+        "meaning": "Dễ bị tổn thương, dễ gặp nguy hiểm",
+        "example": "Older people are especially vulnerable to cold temperatures even inside their homes."
+    },
+    {
+        "word": "Skeptical",
+        "type": "adj",
+        "pronunciation": "/ˈskep.tɪ.kəl/",
+        "meaning": "Hoài nghi, đa nghi",
+        "example": "Many experts remain skeptical about his claims of having invented a new energy source."
+    },
+    {
+        "word": "Abundant",
+        "type": "adj",
+        "pronunciation": "/əˈbʌn.dənt/",
+        "meaning": "Dồi dào, phong phú",
+        "example": "There is abundant evidence that cars have a harmful effect on the environment."
+    },
+    {
+        "word": "Compulsory",
+        "type": "adj",
+        "pronunciation": "/kəmˈpʌl.sər.i/",
+        "meaning": "Bắt buộc",
+        "example": "Swimming was compulsory at my school, whether you liked it or not."
+    },
+    {
+        "word": "Frivolous",
+        "type": "adj",
+        "pronunciation": "/ˈfrɪv.əl.əs/",
+        "meaning": "Phù phiếm, lãng phí thời gian/tiền bạc",
+        "example": "I think he sees her as a frivolous young woman with no serious interests."
+    },
+    {
+        "word": "Imminent",
+        "type": "adj",
+        "pronunciation": "/ˈɪm.ɪ.nənt/",
+        "meaning": "Sắp xảy ra (thường là điều xấu)",
+        "example": "A strike is imminent, which will cause massive disruption to train services."
+    },
+    {
+        "word": "Jargon",
+        "type": "noun",
+        "pronunciation": "/ˈdʒɑː.ɡən/",
+        "meaning": "Biệt ngữ, từ chuyên môn khó hiểu",
+        "example": "The instructions were written in such technical jargon that I couldn't understand them."
+    },
+    {
+        "word": "Nostalgia",
+        "type": "noun",
+        "pronunciation": "/nɒsˈtæl.dʒə/",
+        "meaning": "Nỗi hoài niệm, sự nhớ về quá khứ",
+        "example": "Hearing that song again filled him with nostalgia for his college days."
+    },
+    {
+        "word": "Ominous",
+        "type": "adj",
+        "pronunciation": "/ˈɒm.ɪ.nəs/",
+        "meaning": "Mang điềm xấu, đáng lo ngại",
+        "example": "There was an ominous silence when I asked whether my contract was going to be renewed."
+    },
+    {
+        "word": "Prerequisite",
+        "type": "noun",
+        "pronunciation": "/ˌpriːˈrek.wɪ.zɪt/",
+        "meaning": "Điều kiện tiên quyết, bắt buộc phải có trước",
+        "example": "Passing a written test is a prerequisite for taking the advanced course."
+    },
+    {
+        "word": "Redundant",
+        "type": "adj",
+        "pronunciation": "/rɪˈdʌn.dənt/",
+        "meaning": "Dư thừa, bị sa thải (vì không cần thiết nữa)",
+        "example": "To keep the company alive, half the workforce is being made redundant."
+    },
+    {
+        "word": "Subtle",
+        "type": "adj",
+        "pronunciation": "/ˈsʌt.əl/",
+        "meaning": "Tinh tế, không dễ nhận ra",
+        "example": "The room was painted a subtle shade of pink."
+    },
+    {
+        "word": "Tenacious",
+        "type": "adj",
+        "pronunciation": "/təˈneɪ.ʃəs/",
+        "meaning": "Kiên trì, ngoan cường, bám dai",
+        "example": "There has been tenacious local opposition to the new airport."
+    },
+    {
+        "word": "Mundane",
+        "type": "adj",
+        "pronunciation": "/mʌnˈdeɪn/",
+        "meaning": "Tầm thường, nhàm chán, thuộc về cõi trần",
+        "example": "Mundane matters such as paying bills and shopping for food do not interest her."
+    },
+    {
+        "word": "Volatile",
+        "type": "adj",
+        "pronunciation": "/ˈvɒl.ə.taɪl/",
+        "meaning": "Dễ bay hơi, dễ biến đổi (tính khí, thị trường)",
+        "example": "Food and fuel prices are very volatile in a war situation."
+    },
+    {
+        "word": "Cognitive",
+        "type": "adj",
+        "pronunciation": "/ˈkɒɡ.nə.tɪv/",
+        "meaning": "Thuộc về nhận thức, trí não",
+        "example": "Some of her cognitive functions have been impaired due to the accident."
+    },
+    {
+        "word": "Innate",
+        "type": "adj",
+        "pronunciation": "/ɪˈneɪt/",
+        "meaning": "Bẩm sinh, thiên phú",
+        "example": "Cyril's most impressive quality was his innate goodness."
+    },
+    {
+        "word": "Viable",
+        "type": "adj",
+        "pronunciation": "/ˈvaɪ.ə.bəl/",
+        "meaning": "Khả thi, có thể phát triển được",
+        "example": "In order to make the company viable, it will unfortunately be necessary to reduce staffing levels."
+    }
+]

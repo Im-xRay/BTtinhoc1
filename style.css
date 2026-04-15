@@ -1,0 +1,359 @@
+/* =========================================
+   1. CÀI ĐẶT CHUNG (BASE STYLE)
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+    /* Màu nền xám nhạt dịu mắt */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 900px;
+    width: 100%;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* =========================================
+   2. HỆ THỐNG TABS (CHUYỂN TAB HỌC - THI)
+   ========================================= */
+.tabs {
+    display: inline-flex;
+    background-color: #e0e6ed;
+    border-radius: 12px;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    padding: 10px 24px;
+    border: none;
+    background: none;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #555;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+    background-color: #fff;
+    color: #6e8efb;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Ẩn các phần không được chọn */
+.section {
+    display: block;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.section.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================
+   3. GIAO DIỆN HỌC (FLASHCARDS)
+   ========================================= */
+.instruction {
+    text-align: center;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.flashcard {
+    background-color: transparent;
+    width: 100%;
+    height: 220px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.flashcard.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+.card-front {
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: white;
+}
+
+.card-front h2 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.card-front .type {
+    font-style: italic;
+    opacity: 0.8;
+}
+
+.card-back {
+    background-color: white;
+    color: #333;
+    transform: rotateY(180deg);
+    border: 2px solid #e0e0e0;
+}
+
+.card-back h3 {
+    color: #e74c3c;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.card-back p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* =========================================
+   4. GIAO DIỆN THI (QUIZ TEST)
+   ========================================= */
+.quiz-box {
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 15px;
+}
+
+.quiz-header h2 {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+#score-display {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #27ae60;
+    background: #e8f8f5;
+    padding: 8px 16px;
+    border-radius: 20px;
+}
+
+.question-container {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#question-word {
+    font-size: 3rem;
+    color: #2c3e50;
+    letter-spacing: 1px;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.option-btn {
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    border: 2px solid #e0e6ed;
+    border-radius: 12px;
+    background-color: white;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 500;
+}
+
+.option-btn:hover {
+    border-color: #6e8efb;
+    background-color: #f8faff;
+}
+
+/* Hiệu ứng khi chọn đúng/sai */
+.option-btn.correct {
+    background-color: #2ecc71;
+    color: white;
+    border-color: #2ecc71;
+}
+
+.option-btn.wrong {
+    background-color: #e74c3c;
+    color: white;
+    border-color: #e74c3c;
+}
+
+.quiz-footer {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.primary-btn {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    background-color: #2c3e50;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.primary-btn:hover {
+    background-color: #1a252f;
+}
+
+.primary-btn.hidden {
+    display: none;
+}
+
+/* Responsive cho điện thoại */
+@media (max-width: 600px) {
+    .options-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #question-word {
+        font-size: 2.2rem;
+    }
+
+    .quiz-box {
+        padding: 20px;
+    }
+}
+
+/* =========================================
+   HIỆU ỨNG DI CHUỘT VÀO FLASHCARD
+   ========================================= */
+.flashcard .card-front,
+.flashcard .card-back {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.flashcard:hover .card-front,
+.flashcard:hover .card-back {
+    box-shadow: 0 15px 35px rgba(110, 142, 251, 0.4);
+    /* Phát sáng màu xanh tím */
+}
+
+/* Thẻ nổi nhẹ lên khi lật */
+.flashcard:active {
+    transform: scale(0.97);
+}
+
+/* =========================================
+   ANIMATION NỀN THẺ FLASHCARD
+   ========================================= */
+.card-front {
+    background: linear-gradient(-45deg, #6e8efb, #a777e3, #4facfe, #00f2fe);
+    background-size: 400% 400%;
+    animation: gradientBG 8s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* =========================================
+   CUSTOM THANH CUỘN (SCROLLBAR)
+   ========================================= */
+::-webkit-scrollbar {
+    width: 8px;
+    /* Độ rộng của thanh cuộn */
+}
+
+::-webkit-scrollbar-track {
+    background: #f4f7f6;
+    /* Màu nền của rãnh cuộn */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #a777e3;
+    /* Màu của thanh cuộn */
+    border-radius: 10px;
+    /* Bo góc tròn */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #6e8efb;
+    /* Đổi màu khi hover vào thanh cuộn */
+}
