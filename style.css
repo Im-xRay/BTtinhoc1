@@ -277,7 +277,61 @@ header h1 {
 }
 
 /* Responsive cho điện thoại */
+/* =========================================
+   TỐI ƯU GIAO DIỆN RIÊNG CHO ĐIỆN THOẠI
+   ========================================= */
 @media (max-width: 600px) {
+
+    /* Ép khoảng cách 2 bên sát lề hơn để tiết kiệm diện tích */
+    body {
+        padding: 15px 10px;
+    }
+
+    /* Thu nhỏ tiêu đề và nút bấm */
+    header h1 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+
+    .tabs {
+        margin-bottom: 15px;
+    }
+
+    .tab-btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    .instruction {
+        margin-bottom: 15px;
+        font-size: 0.9rem;
+    }
+
+    /* Thu nhỏ Flashcard và ép hiển thị 1 cột */
+    .grid-layout {
+        grid-template-columns: 1fr;
+        /* Ép chắc chắn 1 cột */
+        gap: 15px;
+    }
+
+    .flashcard {
+        height: 180px;
+    }
+
+    /* Thẻ lùn lại một chút */
+    .card-front h2 {
+        font-size: 1.6rem;
+    }
+
+    .card-back h3 {
+        font-size: 1.1rem;
+    }
+
+    .card-back p {
+        font-size: 0.85rem;
+    }
+
+    /* Tối ưu phần Quiz */
     .options-grid {
         grid-template-columns: 1fr;
     }
@@ -288,6 +342,11 @@ header h1 {
 
     .quiz-box {
         padding: 20px;
+    }
+
+    .option-btn {
+        padding: 12px 15px;
+        font-size: 1rem;
     }
 }
 
