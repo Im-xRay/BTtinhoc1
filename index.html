@@ -4,30 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="IELTS Vocabulary Hub - Học và luyện tập từ vựng IELTS">
     <title>IELTS nè má</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap"
         rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
 
 <body>
     <div class="container">
         <header>
-            <h1>🚀 IELTS nè má</h1>
-            <nav class="tabs" role="tablist">
-                <button id="tab-learn" class="tab-btn active" role="tab" aria-selected="true">Học Từ Vựng</button>
-                <button id="tab-quiz" class="tab-btn" role="tab" aria-selected="false">Luyện Tập (Quiz)</button>
+            <div class="header-top">
+                <h1>🚀 IELTS nè má</h1>
+                <button id="dark-mode-toggle" class="icon-btn">🌙</button>
+            </div>
+
+            <nav class="tabs">
+                <button id="tab-learn" class="tab-btn active">Học Từ Vựng</button>
+                <button id="tab-quiz" class="tab-btn">Luyện Tập (Quiz)</button>
             </nav>
         </header>
 
         <main>
-            <section id="section-learn" class="section active" role="tabpanel">
-                <p class="instruction">Click vào thẻ để xem nghĩa và ví dụ chi tiết.</p>
+            <section id="section-learn" class="section active">
+                <div class="toolbar">
+                    <p class="instruction">Click vào thẻ để lật. Bấm loa để nghe.</p>
+                    <input type="text" id="search-bar" placeholder="🔍 Tìm kiếm từ vựng...">
+                </div>
                 <div id="flashcard-container" class="grid-layout"></div>
             </section>
 
-            <section id="section-quiz" class="section hidden" role="tabpanel">
+            <section id="section-quiz" class="section hidden">
                 <div class="quiz-box">
                     <header class="quiz-header">
                         <h2>Chọn nghĩa đúng của từ sau:</h2>
@@ -35,6 +42,7 @@
                     </header>
                     <div class="question-container">
                         <h3 id="question-word">Loading...</h3>
+                        <p id="streak-display" class="streak hidden">🔥 Đang cháy: 3 câu liên tiếp!</p>
                     </div>
                     <div id="options-container" class="options-grid"></div>
                     <footer class="quiz-footer">
@@ -46,9 +54,24 @@
 
         <footer class="author-signature">
             <p>Coded with 💻 & ☕ by <strong>Tphuc</strong></p>
+            <button id="floating-translate-btn" class="floating-btn">🌐 Tra Từ</button>
+
+            <div id="translate-modal" class="modal-overlay hidden">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>🌐 Dịch Nhanh (EN ➔ VI)</h3>
+                        <button id="close-translate-btn" class="close-btn">✖</button>
+                    </div>
+                    <textarea id="translate-input" placeholder="Nhập từ hoặc câu tiếng Anh cần dịch..."></textarea>
+                    <button id="run-translate-btn" class="primary-btn" style="width: 100%; margin-top: 10px;">Dịch
+                        ngay</button>
+                    <div id="translate-result" class="result-box">
+                        <p><em>Kết quả dịch sẽ hiện ở đây...</em></p>
+                    </div>
+                </div>
+            </div>
         </footer>
     </div>
-
     <script src="script.js"></script>
 </body>
 

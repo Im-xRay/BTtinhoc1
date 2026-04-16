@@ -275,6 +275,252 @@ header h1 {
     display: none;
 }
 
+/* =========================================
+   9. HEADER MỚI (CHỨA NÚT DARK MODE)
+   ========================================= */
+.header-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.header-top h1 {
+    margin-bottom: 0;
+    /* Xóa margin cũ để căn giữa đẹp hơn */
+}
+
+.icon-btn {
+    position: absolute;
+    right: 0;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+.icon-btn:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+/* =========================================
+   10. THANH TÌM KIẾM (SEARCH BAR)
+   ========================================= */
+.toolbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+#search-bar {
+    width: 100%;
+    max-width: 450px;
+    padding: 12px 20px;
+    border: 2px solid #e0e6ed;
+    border-radius: 30px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s;
+    font-family: inherit;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+#search-bar:focus {
+    border-color: #6e8efb;
+    box-shadow: 0 0 12px rgba(110, 142, 251, 0.2);
+}
+
+/* =========================================
+   11. NÚT TRA CAMBRIDGE 
+   ========================================= */
+.cambridge-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 16px;
+    background-color: #f4f7f6;
+    color: #2c3e50;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.cambridge-btn:hover {
+    background-color: #e0e6ed;
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   12. HIỆU ỨNG STREAK (ĐANG CHÁY)
+   ========================================= */
+.streak {
+    color: #e74c3c;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* =========================================
+   13. DARK MODE (GIAO DIỆN TỐI)
+   ========================================= */
+/* Khi body có class .dark-theme thì toàn bộ màu sắc sẽ bị ghi đè */
+body.dark-theme {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-theme header h1 {
+    color: #f4f4f4;
+}
+
+body.dark-theme .tabs {
+    background-color: #1e1e1e;
+}
+
+body.dark-theme .tab-btn {
+    color: #888;
+}
+
+body.dark-theme .tab-btn.active {
+    background-color: #333;
+    color: #6e8efb;
+}
+
+body.dark-theme .instruction {
+    color: #aaa;
+}
+
+body.dark-theme .icon-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Tìm kiếm Dark Mode */
+body.dark-theme #search-bar {
+    background-color: #1e1e1e;
+    border-color: #333;
+    color: #fff;
+}
+
+body.dark-theme #search-bar::placeholder {
+    color: #666;
+}
+
+/* Mặt sau Flashcard Dark Mode */
+body.dark-theme .card-back {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border-color: #333;
+}
+
+body.dark-theme .card-back h3 {
+    color: #ff6b6b;
+}
+
+body.dark-theme .card-back p {
+    color: #bbb;
+}
+
+/* Nút Cambridge Dark Mode */
+body.dark-theme .cambridge-btn {
+    background-color: #333;
+    color: #f4f4f4;
+}
+
+body.dark-theme .cambridge-btn:hover {
+    background-color: #444;
+}
+
+/* Quiz Box Dark Mode */
+body.dark-theme .quiz-box {
+    background-color: #1e1e1e;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+body.dark-theme .quiz-header {
+    border-bottom-color: #333;
+}
+
+body.dark-theme .quiz-header h2 {
+    color: #aaa;
+}
+
+body.dark-theme #question-word {
+    color: #fff;
+}
+
+body.dark-theme #score-display {
+    background: #1a3a2a;
+    color: #4ade80;
+}
+
+/* Màu xanh lá đậm */
+
+/* Nút đáp án Dark Mode */
+body.dark-theme .option-btn {
+    background-color: #1e1e1e;
+    border-color: #333;
+    color: #ddd;
+}
+
+body.dark-theme .option-btn:hover:not(:disabled) {
+    background-color: #2a2a2a;
+    border-color: #6e8efb;
+}
+
+/* Nút Next Dark Mode */
+body.dark-theme .primary-btn {
+    background-color: #4facfe;
+    color: #fff;
+}
+
+body.dark-theme .primary-btn:hover {
+    background-color: #00f2fe;
+}
+
+/* Chữ ký Dark Mode */
+body.dark-theme .author-signature {
+    border-top-color: #333;
+    color: #666;
+}
+
+body.dark-theme .author-signature strong {
+    color: #4facfe;
+}
+
+/* Thanh cuộn Dark Mode */
+body.dark-theme::-webkit-scrollbar-track {
+    background: #121212;
+}
+
+body.dark-theme::-webkit-scrollbar-thumb {
+    background: #444;
+}
+
+body.dark-theme::-webkit-scrollbar-thumb:hover {
+    background: #666;
+}
+
 @media (max-width: 600px) {
     body {
         padding: 10px;
@@ -422,4 +668,128 @@ header h1 {
 
 .author-signature strong {
     color: #2c3e50;
+}
+
+/* =========================================
+   14. CÔNG CỤ DỊCH MINI (POPUP & NÚT TRÔI NỔI)
+   ========================================= */
+.floating-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(110, 142, 251, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+    z-index: 100;
+}
+
+.floating-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(110, 142, 251, 0.6);
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal-content {
+    background: white;
+    width: 90%;
+    max-width: 450px;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.hidden .modal-content {
+    transform: translateY(20px);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #888;
+}
+
+.close-btn:hover {
+    color: #e74c3c;
+}
+
+#translate-input {
+    width: 100%;
+    height: 100px;
+    padding: 15px;
+    border: 2px solid #e0e6ed;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: none;
+    outline: none;
+}
+
+#translate-input:focus {
+    border-color: #6e8efb;
+}
+
+.result-box {
+    margin-top: 15px;
+    padding: 15px;
+    background: #f8faff;
+    border-left: 4px solid #6e8efb;
+    border-radius: 8px;
+    min-height: 60px;
+    font-size: 1.05rem;
+    color: #2c3e50;
+}
+
+/* Dark Mode cho Bảng Dịch */
+body.dark-theme .modal-content {
+    background: #1e1e1e;
+    color: #f4f4f4;
+}
+
+body.dark-theme #translate-input {
+    background: #121212;
+    border-color: #333;
+    color: #fff;
+}
+
+body.dark-theme .result-box {
+    background: #121212;
+    border-left-color: #4facfe;
+    color: #4ade80;
 }

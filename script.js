@@ -1,61 +1,69 @@
-// ==========================================
-// BIẾN TOÀN CỤC & DỮ LIỆU
-// ==========================================
 let vocabList = [];
 let currentScore = 0;
-// Lấy điểm kỷ lục từ bộ nhớ trình duyệt, nếu chưa có thì mặc định là 0
+let streak = 0; // Đếm số câu đúng liên tiếp
 let highScore = localStorage.getItem('ielts_highscore') || 0;
 let correctAnswerObj = null;
 
-// ==========================================
-// 1. XỬ LÝ CHUYỂN TAB (HỌC & THI)
-// ==========================================
+// Gắn các Element
 const tabLearnBtn = document.getElementById('tab-learn');
 const tabQuizBtn = document.getElementById('tab-quiz');
 const sectionLearn = document.getElementById('section-learn');
 const sectionQuiz = document.getElementById('section-quiz');
 const scoreDisplay = document.getElementById('score-display');
+const streakDisplay = document.getElementById('streak-display');
+const container = document.getElementById('flashcard-container');
+const searchBar = document.getElementById('search-bar');
+const darkModeToggle = document.getElementById('dark-mode-toggle');
 
-tabLearnBtn.addEventListener('click', () => {
-    tabLearnBtn.classList.add('active');
-    tabQuizBtn.classList.remove('active');
-    sectionLearn.classList.remove('hidden');
-    sectionQuiz.classList.add('hidden');
+// ==========================================
+// 1. DARK MODE (GIAO DIỆN TỐI)
+// ==========================================
+// Kiểm tra xem người dùng có lưu cài đặt Dark Mode không
+if (localStorage.getItem('dark_mode') === 'true') {
+    document.body.classList.add('dark-theme');
+    darkModeToggle.textContent = '☀️';
+}
+
+darkModeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-theme');
+    const isDark = document.body.classList.contains('dark-theme');
+    darkModeToggle.textContent = isDark ? '☀️' : '🌙';
+    localStorage.setItem('dark_mode', isDark);
 });
 
+// ==========================================
+// 2. CHUYỂN TAB & LOAD DỮ LIỆU
+// ==========================================
+tabLearnBtn.addEventListener('click', () => switchTab(tabLearnBtn, tabQuizBtn, sectionLearn, sectionQuiz));
 tabQuizBtn.addEventListener('click', () => {
-    tabQuizBtn.classList.add('active');
-    tabLearnBtn.classList.remove('active');
-    sectionQuiz.classList.remove('hidden');
-    sectionLearn.classList.add('hidden');
-
-    if (!correctAnswerObj && vocabList.length > 0) {
-        loadNewQuestion();
-    }
-    updateScoreBoard(); // Hiện điểm kỷ lục ngay khi vào tab
+    switchTab(tabQuizBtn, tabLearnBtn, sectionQuiz, sectionLearn);
+    if (!correctAnswerObj && vocabList.length > 0) loadNewQuestion();
+    updateScoreBoard();
 });
 
-// ==========================================
-// 2. TẢI DATA.JSON & HIỂN THỊ FLASHCARD
-// ==========================================
+function switchTab(activeBtn, inactiveBtn, activeSection, inactiveSection) {
+    activeBtn.classList.add('active'); inactiveBtn.classList.remove('active');
+    activeSection.classList.remove('hidden'); inactiveSection.classList.add('hidden');
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     fetch('data.json')
-        .then(response => response.json())
+        .then(res => res.json())
         .then(data => {
             vocabList = data;
-            renderFlashcards();
-            loadNewQuestion();
-        })
-        .catch(error => console.error("Lỗi load data:", error));
+            renderFlashcards(vocabList);
+        });
 });
 
-function renderFlashcards() {
-    const container = document.getElementById('flashcard-container');
+// ==========================================
+// 3. RENDER FLASHCARD & LINK CAMBRIDGE
+// ==========================================
+function renderFlashcards(dataToRender) {
     container.innerHTML = '';
-
-    vocabList.forEach(wordObj => {
+    dataToRender.forEach(wordObj => {
         const card = document.createElement('div');
         card.className = 'flashcard';
+        // Nút Cambridge tích hợp ngay mặt sau thẻ
         card.innerHTML = `
             <div class="card-inner">
                 <div class="card-front">
@@ -65,68 +73,75 @@ function renderFlashcards() {
                 </div>
                 <div class="card-back">
                     <h3>${wordObj.meaning}</h3>
-                    <p><strong>Ex:</strong> <i>"${wordObj.example}"</i></p>
+                    <p><i>"${wordObj.example}"</i></p>
+                    <a href="https://dictionary.cambridge.org/dictionary/english/${wordObj.word.toLowerCase()}" target="_blank" class="cambridge-btn">📖 Tra Cambridge</a>
                 </div>
             </div>
         `;
 
-        // CẬP NHẬT Ở ĐÂY: Thêm tính năng đọc từ khi click
-        card.addEventListener('click', () => {
-            card.classList.toggle('flipped'); // Lật thẻ
-            speakWord(wordObj.word);          // Đọc tiếng Anh
-        });
+        card.addEventListener('click', (e) => {
+            // Không lật thẻ nếu bấm vào nút Cambridge
+            if (e.target.classList.contains('cambridge-btn')) return;
 
+            card.classList.toggle('flipped');
+            if (card.classList.contains('flipped')) {
+                speakWord(wordObj.word); // Chỉ đọc khi lật sang mặt sau
+            }
+        });
         container.appendChild(card);
     });
 }
 
 // ==========================================
-// 3. TÍNH NĂNG ĐỌC PHÁT ÂM (TEXT-TO-SPEECH)
+// 4. TÌM KIẾM TỪ VỰNG
+// ==========================================
+searchBar.addEventListener('input', (e) => {
+    const keyword = e.target.value.toLowerCase();
+    const filteredList = vocabList.filter(item =>
+        item.word.toLowerCase().includes(keyword) ||
+        item.meaning.toLowerCase().includes(keyword)
+    );
+    renderFlashcards(filteredList);
+});
+
+// ==========================================
+// 5. PHÁT ÂM
 // ==========================================
 function speakWord(text) {
-    // Kiểm tra xem trình duyệt có hỗ trợ giọng nói không
     if ('speechSynthesis' in window) {
         const utterance = new SpeechSynthesisUtterance(text);
-        utterance.lang = 'en-GB'; // Giọng Anh chuẩn (British English)
-        utterance.rate = 0.65;    // Tốc độ đọc chậm lại một chút cho dễ nghe
+        utterance.lang = 'en-GB';
         window.speechSynthesis.speak(utterance);
     }
 }
 
 // ==========================================
-// 4. LOGIC LÀM BÀI QUIZ TRẮC NGHIỆM
+// 6. QUIZ & GAMIFICATION (PHÁO HOA)
 // ==========================================
 const questionWordEl = document.getElementById('question-word');
 const optionsContainer = document.getElementById('options-container');
 const nextBtn = document.getElementById('next-question-btn');
 
 function updateScoreBoard() {
-    scoreDisplay.innerHTML = `Điểm: ${currentScore} &nbsp;|&nbsp; <span style="color:#7f8c8d; font-size: 0.9rem;">Kỷ lục: ${highScore}</span>`;
+    scoreDisplay.innerHTML = `Điểm: ${currentScore} &nbsp;|&nbsp; Kỷ lục: ${highScore}`;
 }
 
 function loadNewQuestion() {
     nextBtn.classList.add('hidden');
     optionsContainer.innerHTML = '';
 
-    const randomIndex = Math.floor(Math.random() * vocabList.length);
-    correctAnswerObj = vocabList[randomIndex];
-
+    correctAnswerObj = vocabList[Math.floor(Math.random() * vocabList.length)];
     questionWordEl.textContent = correctAnswerObj.word;
-
-    // TỰ ĐỘNG ĐỌC PHÁT ÂM KHI HIỆN CÂU HỎI
     speakWord(correctAnswerObj.word);
 
-    let wrongOptions = vocabList.filter(item => item.word !== correctAnswerObj.word);
-    wrongOptions = wrongOptions.sort(() => 0.5 - Math.random()).slice(0, 3);
-
+    let wrongOptions = vocabList.filter(item => item.word !== correctAnswerObj.word)
+        .sort(() => 0.5 - Math.random()).slice(0, 3);
     let options = [correctAnswerObj, ...wrongOptions].sort(() => 0.5 - Math.random());
 
     options.forEach((option, index) => {
         const btn = document.createElement('button');
         btn.className = 'option-btn';
-        // Hiển thị số 1,2,3,4 ở đầu để biết phím tắt
         btn.innerHTML = `<strong>${index + 1}.</strong> ${option.meaning}`;
-
         btn.addEventListener('click', () => checkAnswer(btn, option));
         optionsContainer.appendChild(btn);
     });
@@ -134,25 +149,34 @@ function loadNewQuestion() {
 
 function checkAnswer(selectedBtn, selectedOption) {
     const allBtns = optionsContainer.querySelectorAll('.option-btn');
-    allBtns.forEach(btn => btn.disabled = true); // Khóa nút
+    allBtns.forEach(btn => btn.disabled = true);
 
     if (selectedOption.word === correctAnswerObj.word) {
         selectedBtn.classList.add('correct');
-        currentScore += 10;
+        streak++;
+        // Nhân điểm nếu có Streak
+        let pointsEarned = 10 + (streak > 2 ? 5 : 0);
+        currentScore += pointsEarned;
 
-        // Cập nhật kỷ lục nếu điểm hiện tại cao hơn
+        // Hiện thông báo cháy
+        if (streak >= 3) {
+            streakDisplay.textContent = `🔥 Đang cháy: ${streak} câu liên tiếp (+5 đ thưởng)`;
+            streakDisplay.classList.remove('hidden');
+        }
+
         if (currentScore > highScore) {
             highScore = currentScore;
             localStorage.setItem('ielts_highscore', highScore);
+            // BẮN PHÁO HOA KHI PHÁ KỶ LỤC
+            confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
         }
     } else {
         selectedBtn.classList.add('wrong');
-        currentScore = 0; // Trả lời sai thì reset điểm về 0 (như chơi game)
-
+        currentScore = 0;
+        streak = 0;
+        streakDisplay.classList.add('hidden');
         allBtns.forEach(btn => {
-            if (btn.textContent.includes(correctAnswerObj.meaning)) {
-                btn.classList.add('correct');
-            }
+            if (btn.textContent.includes(correctAnswerObj.meaning)) btn.classList.add('correct');
         });
     }
 
@@ -162,25 +186,13 @@ function checkAnswer(selectedBtn, selectedOption) {
 
 nextBtn.addEventListener('click', loadNewQuestion);
 
-// ==========================================
-// 5. SỬ DỤNG BÀN PHÍM ĐỂ CHỌN ĐÁP ÁN (PHÍM 1, 2, 3, 4, ENTER)
-// ==========================================
+// Bàn phím
 document.addEventListener('keydown', (e) => {
-    // Chỉ kích hoạt phím tắt nếu đang mở Tab Quiz
     if (sectionQuiz.classList.contains('hidden')) return;
-
     const allBtns = optionsContainer.querySelectorAll('.option-btn');
-
-    // Nếu bấm số 1, 2, 3, 4
     if (['1', '2', '3', '4'].includes(e.key)) {
         const btnIndex = parseInt(e.key) - 1;
-        if (allBtns[btnIndex] && !allBtns[btnIndex].disabled) {
-            allBtns[btnIndex].click(); // Giả lập hành động click chuột
-        }
+        if (allBtns[btnIndex] && !allBtns[btnIndex].disabled) allBtns[btnIndex].click();
     }
-
-    // Nếu bấm Enter để sang câu mới
-    if (e.key === 'Enter' && !nextBtn.classList.contains('hidden')) {
-        nextBtn.click();
-    }
+    if (e.key === 'Enter' && !nextBtn.classList.contains('hidden')) nextBtn.click();
 });
