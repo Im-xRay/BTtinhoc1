@@ -136,7 +136,6 @@ header h1 {
 }
 
 .card-front {
-    background: linear-gradient(135deg, #6e8efb, #a777e3);
     color: white;
 }
 
@@ -276,41 +275,27 @@ header h1 {
     display: none;
 }
 
-/* Responsive cho điện thoại */
-/* =========================================
-   TỐI ƯU GIAO DIỆN RIÊNG CHO ĐIỆN THOẠI
-   ========================================= */
 @media (max-width: 600px) {
-
-    /* Ép khoảng cách 2 bên sát lề hơn để tiết kiệm diện tích */
     body {
-        padding: 15px 10px;
+        padding: 10px;
     }
 
-    /* Thu nhỏ tiêu đề và nút bấm */
     header h1 {
-        font-size: 1.8rem;
-        margin-bottom: 15px;
+        font-size: 1.6rem;
+        margin-bottom: 10px;
     }
 
     .tabs {
-        margin-bottom: 15px;
+        margin-bottom: 10px;
     }
 
     .tab-btn {
-        padding: 8px 16px;
+        padding: 8px 12px;
         font-size: 0.9rem;
     }
 
-    .instruction {
-        margin-bottom: 15px;
-        font-size: 0.9rem;
-    }
-
-    /* Thu nhỏ Flashcard và ép hiển thị 1 cột */
     .grid-layout {
         grid-template-columns: 1fr;
-        /* Ép chắc chắn 1 cột */
         gap: 15px;
     }
 
@@ -318,35 +303,37 @@ header h1 {
         height: 180px;
     }
 
-    /* Thẻ lùn lại một chút */
-    .card-front h2 {
-        font-size: 1.6rem;
+    /* Fix phần Quiz: Xếp dọc điểm số và làm gọn nút */
+    .quiz-box {
+        padding: 15px;
     }
 
-    .card-back h3 {
-        font-size: 1.1rem;
+    .quiz-header {
+        display: flex;
+        flex-direction: column;
+        /* Đẩy cục điểm số xuống dòng cho rộng rãi */
+        gap: 12px;
+        padding-bottom: 10px;
     }
 
-    .card-back p {
-        font-size: 0.85rem;
-    }
-
-    /* Tối ưu phần Quiz */
-    .options-grid {
-        grid-template-columns: 1fr;
+    .quiz-header h2 {
+        font-size: 1rem;
+        text-align: center;
     }
 
     #question-word {
-        font-size: 2.2rem;
+        font-size: 1.8rem;
+        margin-bottom: 20px;
     }
 
-    .quiz-box {
-        padding: 20px;
+    .options-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
     }
 
     .option-btn {
-        padding: 12px 15px;
-        font-size: 1rem;
+        padding: 10px;
+        font-size: 0.95rem;
     }
 }
 
@@ -415,4 +402,24 @@ header h1 {
 ::-webkit-scrollbar-thumb:hover {
     background: #6e8efb;
     /* Đổi màu khi hover vào thanh cuộn */
+}
+
+/* =========================================
+   FOOTER & SIGNATURE
+   ========================================= */
+.author-signature {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e6ed;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.author-signature p {
+    margin: 0;
+}
+
+.author-signature strong {
+    color: #2c3e50;
 }
